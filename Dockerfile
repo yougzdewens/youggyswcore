@@ -9,12 +9,12 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 COPY YouggySW.sln ./
-COPY youggyswlib/*.csproj ./youggyswlib/
+COPY YouggySWLib/*.csproj ./YouggySWLib/
 COPY YouggySW/*.csproj ./YouggySW/
 
 RUN dotnet restore
 COPY . .
-WORKDIR /src/youggyswlib
+WORKDIR /src/YouggySWLib
 RUN dotnet build -c Release -o /app
 
 WORKDIR /src/YouggySW
