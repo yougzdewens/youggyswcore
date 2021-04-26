@@ -1,0 +1,3 @@
+[submodule "youggyswlib"]
+	path = youggyswlib
+	url = https://github.com/yougzdewens/youggyswlib.git
