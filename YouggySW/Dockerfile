@@ -19,7 +19,6 @@ COPY ["YouggySW/YouggySW.csproj", "YouggySW/"]
 RUN dotnet restore "YouggySW/YouggySW.csproj"
 COPY . .
 WORKDIR "/src/YouggySW"
-RUN dotnet build "../youggyswlib/YouggySWLib.csproj" -c Release -o /app/build
 RUN dotnet build "YouggySW.csproj" -c Release -o /app/build
 
 FROM build AS publish
