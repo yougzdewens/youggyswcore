@@ -1,3 +1,6 @@
 [submodule "youggyswlib"]
 	path = youggyswlib
 	url = https://github.com/yougzdewens/youggyswlib.git
+[submodule "YouggySWLib"]
+	path = YouggySWLib
+	url = https://github.com/yougzdewens/youggyswlib.git
