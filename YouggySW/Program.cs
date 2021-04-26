@@ -11,16 +11,23 @@ namespace YouggySW
 
         static void Main(string[] args)
         {    
-            //aTimer = new System.Timers.Timer(86400000);
-            aTimer = new System.Timers.Timer(5000);
-            aTimer.Elapsed += OnTimedEvent;
-            aTimer.AutoReset = true;
-            aTimer.Enabled = true;
+            ////aTimer = new System.Timers.Timer(86400000);
+            //aTimer = new System.Timers.Timer(5000);
+            //aTimer.Elapsed += OnTimedEvent;
+            //aTimer.AutoReset = true;
+            //aTimer.Enabled = true;
 
-            Console.ReadLine();
+            //Console.ReadLine();
+
+            LaunchProcess();
         }
 
         private static void OnTimedEvent(object sender, ElapsedEventArgs e)
+        {
+            LaunchProcess();
+        }
+
+        private static void LaunchProcess()
         {
             Core.GetStockDataCore getStockDataCore = new Core.GetStockDataCore();
 

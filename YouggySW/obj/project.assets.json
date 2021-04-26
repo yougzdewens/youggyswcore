@@ -146,6 +146,20 @@
             "rid": "win"
           }
         }
+      },
+      "YouggySWLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "System.Data.SqlClient": "4.8.2"
+        },
+        "compile": {
+          "bin/placeholder/YouggySWLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/YouggySWLib.dll": {}
+        }
       }
     }
   },
@@ -550,13 +564,19 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "YouggySWLib/1.0.0": {
+      "type": "project",
+      "path": "../YouggySWLib/YouggySWLib.csproj",
+      "msbuildProject": "../YouggySWLib/YouggySWLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.10.9",
       "Newtonsoft.Json >= 13.0.1",
-      "System.Data.SqlClient >= 4.8.2"
+      "System.Data.SqlClient >= 4.8.2",
+      "YouggySWLib >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -595,7 +615,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Développement\\perso\\youggyswcore\\YouggySWLib\\YouggySWLib.csproj": {
+              "projectPath": "E:\\Développement\\perso\\youggyswcore\\YouggySWLib\\YouggySWLib.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -631,6 +655,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.13, 3.1.13]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

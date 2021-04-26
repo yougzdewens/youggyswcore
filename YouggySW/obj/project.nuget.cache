@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rReWTRTtc4v6HJVo/0NsyWX+kUGTUSVN3+3s12TXtneBvbZw7k9N1dD5tOwjaGMJydf5THk9wl8jffPnEwwCGQ==",
+  "dgSpecHash": "Qr2IRjHM86xNPA4xsT4rj6BZJPcWsddYipGfHc97SR2G19PmO24SQ6SszpTDZjLxkNblyLZz971u18T8mnBdtg==",
   "success": true,
   "projectFilePath": "E:\\Développement\\perso\\youggyswcore\\YouggySW\\YouggySW.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,8 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Hugues\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
     "C:\\Users\\Hugues\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\Hugues\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+    "C:\\Users\\Hugues\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\Hugues\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
   ],
   "logs": []
 }
