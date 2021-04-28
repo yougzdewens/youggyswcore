@@ -10,16 +10,16 @@ namespace YouggySW
         private static System.Timers.Timer aTimer;
 
         static void Main(string[] args)
-        {    
-            ////aTimer = new System.Timers.Timer(86400000);
+        {
+            aTimer = new System.Timers.Timer(86400000);
             //aTimer = new System.Timers.Timer(5000);
-            //aTimer.Elapsed += OnTimedEvent;
-            //aTimer.AutoReset = true;
-            //aTimer.Enabled = true;
+            aTimer.Elapsed += OnTimedEvent;
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
 
-            //Console.ReadLine();
+            Console.ReadLine();
 
-            LaunchProcess();
+            //LaunchProcess();
         }
 
         private static void OnTimedEvent(object sender, ElapsedEventArgs e)

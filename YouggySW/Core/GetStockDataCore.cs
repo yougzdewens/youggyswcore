@@ -21,26 +21,25 @@ namespace YouggySW.Core
 
         public void StartGetData()
         {
-            //List<ValueWatching> valuesWatched = GetValuesWatching();
+            List<ValueWatching> valuesWatched = GetValuesWatching();
 
-            //foreach (ValueWatching valueWatched in valuesWatched)
-            //{
-            //    // Récupération de la dernière date insérée
-            //    DateTime? lastDate = dayValuesBusiness.GetLastDateValueInserted(valueWatched.Exchange, valueWatched.Symbol);
+            foreach (ValueWatching valueWatched in valuesWatched)
+            {
+                DateTime? lastDate = dayValuesBusiness.GetLastDateValueInserted(valueWatched.IdSymbol);
 
-            //    if (!lastDate.HasValue || lastDate.Value.Date < DateTime.Now.Date)
-            //    {
-            //        if (DateTime.Now.Date.DayOfWeek != DayOfWeek.Saturday && DateTime.Now.Date.DayOfWeek != DayOfWeek.Sunday)
-            //        {
-            //            GetDailyDataAndInsertForWatchedValues(valueWatched);
-            //        }
-            //    }
-            //}
+                if (!lastDate.HasValue || lastDate.Value.Date < DateTime.Now.Date)
+                {
+                    if (DateTime.Now.Date.DayOfWeek != DayOfWeek.Saturday && DateTime.Now.Date.DayOfWeek != DayOfWeek.Sunday)
+                    {
+                        GetDailyDataAndInsertForWatchedValues(valueWatched, lastDate);
+                    }
+                }
+            }
 
-            FillSymbols(0);
+            //FillSymbols(0);
         }
 
-        private void GetDailyDataAndInsertForWatchedValues(ValueWatching valueWatched)
+        private void GetDailyDataAndInsertForWatchedValues(ValueWatching valueWatched, DateTime? lastDate)
         {
             YouggySWLib.Model.Symbol symbol = new SymbolBusiness().GetSymbolById(valueWatched.IdSymbol).FirstOrDefault();
 
@@ -48,15 +47,17 @@ namespace YouggySW.Core
 
             if (symbol != null)
             {
+                List<Value> valuesForStock = exchangeBackOfficeMarketStack.GetDailyValues(symbol.SymbolText, exchange.Mic);
 
-            }
+                if (lastDate.HasValue)
+                {
+                    valuesForStock = valuesForStock.Where(x => x.DateValue.Date > lastDate.Value.Date).ToList();
+                }
 
-            List<Value> valuesForStock = exchangeBackOfficeMarketStack.GetDailyValues(symbol.Name, exchange.Name);
-
-            // TODO FILTRER pour n'inserer que ce qui nous interesse par rapport au dernier inséré
-            foreach (Value valueForStock in valuesForStock)
-            {
-                dayValuesBusiness.InsertDayValue(valueForStock);
+                foreach (Value valueForStock in valuesForStock)
+                {
+                    dayValuesBusiness.InsertDayValue(valueForStock);
+                }
             }
         }
 
